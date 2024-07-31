@@ -58,11 +58,10 @@ const extractQuestionData = (markdown: string): QuestionData[] => {
   const lines = markdown.split("\n");
   const questionData: QuestionData[] = [];
   let isQuestionSection = false;
-  let lastQuestionEndIndex = -1;
   let currentQuestion = "";
   let currentAnswer = "";
 
-  lines.forEach((line, index) => {
+  lines.forEach((line) => {
     if (line.includes("<!-- QUESTIONS_START -->")) {
       isQuestionSection = true;
     } else if (line.includes("<!-- QUESTIONS_END -->")) {
