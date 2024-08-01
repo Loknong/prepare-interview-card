@@ -74,7 +74,10 @@ const extractQuestionData = (markdown: string): QuestionData[] => {
         if (currentQuestion && currentAnswer) {
           questionData.push({
             question: currentQuestion,
-            answer: currentAnswer,
+            answer: currentAnswer.replace(
+              "**[⬆ Back to Top](#table-of-contents)**",
+              ""
+            ),
           });
         }
 
